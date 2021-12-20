@@ -1,30 +1,49 @@
 import React from 'react';
-import {
-	BrowserRouter as Router,
-	Switch,
-	Routes,
-	Route,
-	Link
-} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import s from './Navbar.module.css';
 
 const Navbar = () => {
 	return (
 		<nav className={s.nav}>
 			<div className={s.item}>
-				<Link to="/profile">Profile</Link>
-			</div>
-			<div className={`${s.item} ${s.active}`}>
-				<Link to="/dialogs">Dialogs</Link>
-			</div>
-			<div className={s.item}>
-				<a>News</a>
-			</div>
-			<div className={s.item}>
-				<a>Music</a>
+				<NavLink
+					to="/profile"
+					className={({ isActive }) => isActive ? s.activeLink : undefined}
+				>
+					Profile
+				</NavLink>
 			</div>
 			<div className={s.item}>
-				<a>Settings</a>
+				<NavLink
+					to="/dialogs"
+					className={({ isActive }) => isActive ? s.activeLink : undefined}
+				>
+					Dialogs
+				</NavLink>
+			</div>
+			<div className={s.item}>
+				<NavLink
+					to="/news"
+					className={({ isActive }) => isActive ? s.activeLink : undefined}
+				>
+					News
+				</NavLink>
+			</div>
+			<div className={s.item}>
+				<NavLink
+					to="/music"
+					className={({ isActive }) => isActive ? s.activeLink : undefined}
+				>
+					Music
+				</NavLink>
+			</div>
+			<div className={s.item}>
+				<NavLink
+					to="/settings"
+					className={({ isActive }) => isActive ? s.activeLink : undefined}
+				>
+					Settings
+				</NavLink>
 			</div>
 		</nav>
 	)
