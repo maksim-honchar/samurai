@@ -1,4 +1,5 @@
 import React from 'react';
+import { Routes, Route, Link } from "react-router-dom";
 import './App.css';
 import Dialogs from './components/Dialogs/Dialogs';
 import Header from './components/Header/Header';
@@ -11,9 +12,11 @@ const App = () => {
 			<Header />
 			<Navbar />
 			<div className='app-wrapper-content'>
-				<Dialogs />
+				<Routes>
+					<Route path='/dialogs' element={<Dialogs />} />
+					<Route path='/profile' element={<Profile />} />
+				</Routes>
 			</div>
-			{/* <Profile /> */}
 		</div>
 	)
 }
