@@ -4,16 +4,12 @@ import styles from './users.module.css'
 import userPhoto from '../../assets/images/user.png'
 
 class Users extends Component {
-	constructor(props) {
-		super(props)
-			axios.get('https://social-network.samuraijs.com/api/1.0/users')
+
+	componentDidMount() {
+		axios.get('https://social-network.samuraijs.com/api/1.0/users')
 				.then(response => {
 					this.props.setUsers(response.data.items)
 				})
-	}
-
-	getUsers = () => {
-
 	}
 
 	render() {
