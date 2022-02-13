@@ -5,7 +5,7 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import UsersAPIComponent from './components/Users/UsersAPIComponent'
+import UsersContainer from './components/Users/UsersContainer'
 
 const App = (props) => {
 
@@ -21,7 +21,7 @@ const App = (props) => {
 					render={() => <Profile />} /> 
 
 				<Route path='/users'
-					render={() => <UsersAPIComponent />} />
+					render={() => <UsersContainer />} />
 			</div>
 		</div>
 	)
